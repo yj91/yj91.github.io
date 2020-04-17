@@ -110,18 +110,14 @@
         addMask($videoImg[i]);
       }
     };
-
-	// 修改这里render()函数：修改图片的路径地址.minSrc 小图的路径. src 大图的路径.修改为自己的图片路径(github的路径)
-	// https://raw.githubusercontent.com/ChemLez/blog-Picture/master/photos/
-	// https://raw.githubusercontent.com/ChemLez/blog-Picture/master/min_photos/
     var render = function render(res) {
       var ulTmpl = "";
       for (var j = 0, len2 = res.list.length; j < len2; j++) {
         var data = res.list[j].arr;
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
-          var minSrc = 'https://raw.githubusercontent.com/yj91/blog-picture/master/min_photos/' + data.link[i];
-          var src = 'https://raw.githubusercontent.com/yj91/blog-picture/master/photos/' + data.link[i];
+          var minSrc = 'https://raw.githubusercontent.com/lawlite19/blog-back-up/master/min_photos/' + data.link[i];
+          var src = 'https://raw.githubusercontent.com/lawlite19/blog-back-up/master/photos/' + data.link[i];
           var type = data.type[i];
           var target = src + (type === 'video' ? '.mp4' : '.jpg');
           src += '';
