@@ -8,17 +8,18 @@
   <link rel="dns-prefetch" href="http://yj91.github.io">
   <title>yilia主题 文章添加版权声明 | 言灵</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.修改article.ejs在 themes&#x2F;yilia&#x2F;layout&#x2F;article.ejs 文件的标注位置： 1234567891011121314&lt;div class&#x3D;&quot;article-entry&quot; itemprop&#x3D;&quot;articleBody&quot;&gt;	&lt;% if (post.excerpt &amp;&amp; in">
+  <meta name="description" content="前言本文介绍的是基于Yilia主题的给文章添加版权信息。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="yilia主题 文章添加版权声明">
 <meta property="og:url" content="http://yj91.github.io/2020/04/21/yilia%E4%B8%BB%E9%A2%98-%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E7%89%88%E6%9D%83%E5%A3%B0%E6%98%8E/index.html">
 <meta property="og:site_name" content="言灵">
-<meta property="og:description" content="1.修改article.ejs在 themes&#x2F;yilia&#x2F;layout&#x2F;article.ejs 文件的标注位置： 1234567891011121314&lt;div class&#x3D;&quot;article-entry&quot; itemprop&#x3D;&quot;articleBody&quot;&gt;	&lt;% if (post.excerpt &amp;&amp; in">
+<meta property="og:description" content="前言本文介绍的是基于Yilia主题的给文章添加版权信息。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-21T02:32:02.000Z">
-<meta property="article:modified_time" content="2020-04-21T02:51:32.048Z">
+<meta property="article:modified_time" content="2020-04-21T03:03:13.347Z">
 <meta property="article:author" content="言 灵">
-<meta property="article:tag" content="hexo yilia">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="yilia">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="言灵" type="application/atom+xml">
@@ -191,7 +192,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-修改article-ejs"><a href="#1-修改article-ejs" class="headerlink" title="1.修改article.ejs"></a>1.修改article.ejs</h2><p>在 themes/yilia/layout/article.ejs 文件的标注位置：</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文介绍的是基于Yilia主题的给文章添加版权信息。</p>
+<a id="more"></a>
+
+<h2 id="1-修改article-ejs"><a href="#1-修改article-ejs" class="headerlink" title="1.修改article.ejs"></a>1.修改article.ejs</h2><p>在 themes/yilia/layout/article.ejs 文件的标注位置：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;article-entry&quot; itemprop&#x3D;&quot;articleBody&quot;&gt;</span><br><span class="line">	&lt;% if (post.excerpt &amp;&amp; index)&#123; %&gt;</span><br><span class="line">		&lt;%- post.excerpt %&gt;</span><br><span class="line">		&lt;% if (theme.excerpt_link) &#123; %&gt;</span><br><span class="line">			&lt;a class&#x3D;&quot;article-more-a&quot; href&#x3D;&quot;&lt;%- url_for(post.path) %&gt;#more&quot;&gt;&lt;%&#x3D; theme.excerpt_link %&gt; &gt;&gt;&lt;&#x2F;a&gt;</span><br><span class="line">		&lt;% &#125; %&gt;</span><br><span class="line">	&lt;% &#125; else &#123; %&gt;</span><br><span class="line">		&lt;%- post.content %&gt;</span><br><span class="line">	&lt;% &#125; %&gt;</span><br><span class="line">	&lt;-- 在此处添加代码--&gt;</span><br><span class="line">	&lt;% if ((theme.reward_type &#x3D;&#x3D;&#x3D; 2 || (theme.reward_type &#x3D;&#x3D;&#x3D; 1 &amp;&amp; post.reward)) &amp;&amp; !index)&#123; %&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;page-reward&quot;&gt;</span><br><span class="line">		&lt;a href&#x3D;&quot;javascript:;&quot; class&#x3D;&quot;page-reward-btn tooltip-top&quot;&gt;</span><br><span class="line">		&lt;div class&#x3D;&quot;tooltip tooltip-east&quot;&gt;</span><br></pre></td></tr></table></figure>
 
 <p>添加如下代码</p>
@@ -262,7 +266,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">hexo yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
         		</li>
       		
 		</ul>
@@ -493,11 +501,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hexo yilia</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
             
             <div class="clearfix"></div>
